@@ -1,0 +1,17 @@
+@import "../../styles.scss";
+
+.footer {
+	background: white;
+	border-top: 1px solid rgba(80, 34, 89, 0.4);
+	-webkit-box-shadow:-1px 1px 4px 1px $primary-color;
+	-moz-box-shadow:-1px 1px 4px 1px $primary-color;
+	box-shadow: -1px 1px 4px 1px $primary-color;
+	z-index:3;
+	// height: 3rem;
+	// border-top: 3px solid $secondary-color;
+}
+.center-vertical {
+	line-height: 3rem;
+	// font-weight: 700;
+	color: $primary-color;
+}

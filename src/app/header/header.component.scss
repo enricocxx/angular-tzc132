@@ -1,0 +1,74 @@
+@import "../../styles.scss";
+
+.srt-nav {
+	// height: 6rem;
+	padding-left: 0;
+	// background-color: $primary-color;
+	background-color: white;
+	border-bottom: 1px solid $border-color-opacity;
+	-webkit-box-shadow:-1px -6px 10px 1px $primary-color;
+	-moz-box-shadow:-1px -6px 10px 1px $primary-color;
+	box-shadow: -1px -6px 10px 1px $primary-color;
+	.srt-logo {
+		position: absolute;
+		width: 25%;
+		z-index: 1;
+	}
+	.logo-section {
+		background: white
+		;
+
+		padding-right: 1rem;
+		// font-weight: 700;
+		// text-align: center;
+		// border-top: 1px solid $primary-border-color;
+		// border-right: 1px solid $primary-border-color;
+		.srt-logo-text {
+			font-size: 2rem;
+			font-weight: 900;
+			text-decoration: none;
+			font-family: Amatic SC;
+			color: $primary-color;
+			padding-left: 2rem;
+			span {
+				color: $secondary-color;
+			}
+		}
+		p {
+			// font-family: Amatic SC;
+			color: black;
+			font-weight: 700;
+			font-size: 0.4rem;
+			margin-bottom: 5px;
+			padding-left: 2rem;
+		}
+	}
+	#navbarDropdown {
+		cursor: pointer;
+	}
+	ul {
+		// background-color: white;
+		li {  
+		a {
+				padding-left: 2rem;
+				// color: white; //adding color breaks design, wtf is that?!!
+			}
+			.dropdown-menu .dropdown-item {
+				color: black;
+			}
+		}
+	} 
+	ul li:last-child {
+		padding-right: 2rem;
+		padding-left: 2rem;
+	}
+}
+
+.navbar-light[_ngcontent-c1] .navbar-nav[_ngcontent-c1] .show[_ngcontent-c1] > .nav-link[_ngcontent-c1], .navbar-light[_ngcontent-c1] .navbar-nav[_ngcontent-c1] .active[_ngcontent-c1] > .nav-link[_ngcontent-c1], .navbar-light[_ngcontent-c1] .navbar-nav[_ngcontent-c1] .nav-link.show[_ngcontent-c1], .navbar-light[_ngcontent-c1] .navbar-nav[_ngcontent-c1] .nav-link.active[_ngcontent-c1] {
+	color: $secondary-color;
+	font-weight: 700;
+}
+
+.navbar-light[_ngcontent-c1] .navbar-nav[_ngcontent-c1] .nav-link[_ngcontent-c1] {
+	color: $primary-color;
+}

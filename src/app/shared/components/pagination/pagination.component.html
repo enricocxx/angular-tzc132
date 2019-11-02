@@ -1,0 +1,26 @@
+<div *ngIf="total_number_of_posts > 10" class="pagination-list">
+	<ul *ngIf="!tagID">
+		<li *ngFor="let page of blogPagination; let i = index;" style="display:inline; ">
+			<a 
+				class="pagination-item" 
+				[ngStyle]= "{color: ( page.active == '#502259' ) ? 'white' : page.active, background:  ( page.active == '#502259' ) ? '#502259' : 'white', borderColor: page.active }" 
+				routerLink="/{{post_type}}/page/{{page.page}}" > {{page.page}} </a>
+		</li> 
+	</ul>
+	<ul *ngIf="tagID">
+		<li *ngFor="let page of blogPagination; let i = index;" style="display:inline; ">
+			<a 
+				class="pagination-item" 
+				[ngStyle]= "{color: ( page.active == '#502259' ) ? 'white' : page.active, background:  ( page.active == '#502259' ) ? '#502259' : 'white', borderColor: page.active }" 
+				routerLink="/{{post_type}}/{{tagName}}/{{tagID}}/{{page.page}}"> {{page.page}} </a>
+		</li> 
+	</ul>
+	<ul *ngIf="post_type=='blog/pretraga'">
+		<li *ngFor="let page of blogPagination; let i = index;" style="display:inline; ">
+			<a 
+				class="pagination-item" 
+				[ngStyle]= "{color: ( page.active == '#502259' ) ? 'white' : page.active, background:  ( page.active == '#502259' ) ? '#502259' : 'white', borderColor: page.active }" 
+				routerLink="/{{post_type}}/{{searchItem}}/{{page.page}}"> {{page.page}} </a>
+		</li> 
+	</ul>
+</div> 
