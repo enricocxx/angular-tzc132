@@ -1,0 +1,10 @@
+<div class="container-fluid" id="test-height">
+	<div class="row">
+		<div [style.display]="hideBackgroundPage" class="col-sm-12 {{decideWidth}} border-right" #mainBox>
+			<router-outlet></router-outlet>
+		</div>
+		<div class="col-lg-3 sidebar-background {{moveSidebarLeft}} {{closeSidebar}}" [style.display]="displaySidebar">
+			<app-sidebar (startCitationDisplaying)="confirmCitationDisplaying()" (stopCitationDisplaying)="stopCitationDisplaying($event)" [imageWidth]="imageWidth"></app-sidebar>			
+		</div>
+	</div>
+</div>

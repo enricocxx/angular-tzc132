@@ -1,0 +1,21 @@
+<div class="container one-screen firm-and-proud-distance-from-header">
+	<div class="row">
+		<div class="col-sm-12" *ngFor="let data of post">
+			<h2 *ngIf="post" [innerHTML]="data.title.rendered"> </h2>
+			<div *ngIf="post" [innerHTML]="data.content.rendered"> </div>
+			<div class="post-meta-distance tag-container">
+				<div class="post-meta-border"></div>
+				<div>
+					<span class="date-label-under-image">Datum objavljivanja: </span><span class="date-under-image"> {{ data.date }}</span> 
+				</div>
+				<div class="tag-label-under-image">Tagovi:</div>
+				<div>
+					<span class="tag-in-card tag-bckg" *ngFor="let tag of data.tags_name">
+						{{tag.name}}  
+					</span>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>

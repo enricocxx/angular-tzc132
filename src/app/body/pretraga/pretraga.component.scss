@@ -1,0 +1,17 @@
+@import "../../../styles.scss"; 
+
+.search-area {
+	margin-top: 2rem;
+	.search-area-span {
+	  color: $secondary-color;
+	  font-weight: 700;	
+	}
+	
+}
+.search-item {
+	color: $secondary-color;
+	font-weight: 700;
+}
+.no-search-results {
+	padding-bottom: 2rem;
+}

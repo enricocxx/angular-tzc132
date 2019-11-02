@@ -1,0 +1,23 @@
+<div class="row firm-and-proud-distance-from-header">
+	<div class="col-lg-1"></div>
+	<div class="col-lg-9">
+		<h2 class="section-title"> Log v0.1</h2>
+		<div *ngFor="let post of introLog; let i = index">
+			<h4 *ngIf="post" [innerHTML]="post.title.rendered"></h4>
+			<p *ngIf="post" [innerHTML]="post.content.rendered"></p>
+			<div class="post-meta-distance tag-container">
+				<div class="post-meta-border"></div>
+				<div>
+					<span class="date-label-under-image">Datum objavljivanja: </span><span class="date-under-image"> {{ post.date }}</span> 
+				</div>
+				<div class="tag-label-under-image">Tagovi:</div>
+				<div>
+					<span class="tag-in-card tag-bckg" *ngFor="let tag of post.tags_name">
+						{{tag.name}}  
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+		  

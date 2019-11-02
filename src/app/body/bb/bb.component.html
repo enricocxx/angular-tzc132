@@ -1,0 +1,30 @@
+<div class="row firm-and-proud-distance-from-header">
+	<div class="col-lg-1"></div>
+	<div class="col-lg-5">
+		<h1 class="section-title">Bitovi i bajtovi</h1>
+	</div>
+</div>
+
+
+
+<div class="row">
+	
+	<div class="col-lg-1"></div>
+	<div class="col-lg-5 border-right">
+		
+		<h4 class="post-title"> Osnove JavaScripta </h4>
+		<div *ngFor="let post of bb; let i = index">
+			<h4 *ngIf="post">
+				<a routerLink="/b1t0v11bajt0v1/{{post.slug}}" [innerHTML]="post.title.rendered"></a>
+			</h4>
+			<p *ngIf="post" [innerHTML]="post.excerpt.rendered"></p>
+		</div>
+	</div>
+	<!-- <div class="col-lg-5">
+		<h2 class="post-title"> Operativni sistemi </h2>
+		<p> U pripremi...</p>
+		<p>Linuks from scratch adventure.
+		</p>
+	</div> -->
+</div>
+	

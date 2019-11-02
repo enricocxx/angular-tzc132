@@ -1,0 +1,4 @@
+@import "../../../../styles.scss";
+.one-screen {
+	@include one-screen();
+}

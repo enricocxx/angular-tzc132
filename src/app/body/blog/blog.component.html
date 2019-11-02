@@ -1,0 +1,44 @@
+<div class="row firm-and-proud-distance-from-header">
+	<div class="col-lg-1"></div>
+	<div class="col-lg-11">
+		<h1 class="section-title">Blog</h1>	
+	</div>
+</div>
+<div class="row blog-container" *ngFor="let data of httpResponse">  
+
+	<div class="col-lg-1"></div>
+	<div class="col-lg-7 border-stylish">
+
+		<h5 class="post-title" *ngIf="data">
+			<a routerLink="/blog/post/{{data.slug}}" [innerHTML]="data.title.rendered"></a>
+		</h5>
+		<div *ngIf="data" class="blog-post" [innerHTML]="data.excerpt.rendered"> </div>
+		<div class=""></div>
+	</div>
+	<div class="col-lg-4 blog-meta-data">
+		<img *ngIf="data.featured_media" class="featured-image blog-image img-thumbnail" src="{{data.featured_image_src}}" alt="{{data.title.rendered}}"/>
+
+		<div class="post-meta-distance">
+			<div>
+				<span class="date-label-under-image">Datum objavljivanja: </span><span class="date-under-image"> {{ data.date }}</span> 
+			</div>
+			<div>
+				<span class="tag-label-under-image">Tagovi:</span>
+				<span class="tag-under-image" *ngFor="let tag of data.tags_name">
+					#<a routerLink="/tags/{{tag.name}}/{{tag.term_id}}" [innerHTML]="tag.name" ></a>
+				</span>
+			</div>
+		</div>
+	</div>
+	
+</div>
+<div class="row firm-and-proud-distance-from-header">
+	<div class="col-lg-1"></div>
+	<div *ngIf="httpResponse">
+		<app-pagination [post_type]="post_type" [result]="httpResponse"></app-pagination>	
+	</div>
+</div>
+
+
+
+		

@@ -1,0 +1,34 @@
+<div class="row  firm-and-proud-distance-from-header" *ngFor="let data of post">
+	<div class="col-lg-1"></div>
+	<div class="col-sm-12 col-lg-7">
+		<h2 class="post-title border-bottom" *ngIf="post" [innerHTML]="data.title.rendered"> </h2>
+		<div *ngIf="post" class="blog-post" [innerHTML]="data.content.rendered"> </div>
+		<div class="post-meta-distance tag-container">
+			<div class="post-meta-border"></div>
+			<div>
+				<span class="date-label-under-image">Datum objavljivanja: </span><span class="date-under-image"> {{ data.date }}</span> 
+			</div>
+			<div class="tag-label-under-image">Tagovi:</div>
+			<div>
+				<span class="tag-in-card tag-bckg" *ngFor="let tag of data.tags_name">
+					<a routerLink="/tags/{{tag.name}}/{{tag.term_id}}" [innerHTML]="tag.name" ></a>
+				</span>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-4 knjige-post-meta">
+		<img class="featured-image img-thumbnail" src="{{data.featured_image_src}}" alt="{{data.title.rendered}}"/>
+		<div class="post-meta-distance">
+			<div>
+				<span class="date-label-under-image">Datum objavljivanja: </span><span class="date-under-image"> {{ data.date }}</span> 
+			</div>
+			<div>
+				<span class="tag-label-under-image">Tagovi:</span>
+				<span class="tag-under-image" *ngFor="let tag of data.tags_name">
+					#<a routerLink="/tags/{{tag.name}}/{{tag.term_id}}" [innerHTML]="tag.name" ></a> 
+				</span>
+			</div>
+		</div>
+	</div>
+</div>
+

@@ -1,0 +1,97 @@
+@import "../../../styles.scss";
+@keyframes moveLeftAnima {
+  from {left: 140%;}
+  to {left: 100%;}
+}
+
+.sidebar-container {
+  padding: 1rem;
+  display: inline-block;
+  height: 100%;
+  .move-sidebar-left {
+     i.fa-arrow-left {
+      position: absolute;
+      left: 5%;
+      color: $primary-color;
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    i.fa-times {
+      position: absolute;
+      right: 5%;
+      color: $primary-color;
+      // float:right;
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    i.fa-arrow-left:hover, {
+      color: $secondary-color;
+      cursor: pointer;
+    }
+    i.fa-times:hover {
+      color: red;
+      cursor: pointer;
+    }
+  }
+  ul {
+  	li {
+  		a {
+  			color: black;
+        border-bottom: 1px solid $secondary-color;
+        z-index: 3;
+  		}
+      a:hover {
+        text-decoration: none;
+        color: $secondary-color;
+        border-bottom: 1px solid $primary-color;
+        z-index: 3;
+      }
+  	}
+  }
+  .sidebar-section-description {
+    margin-top: 4rem;
+  }
+  .sidebar-section-description, .sidebar-links-title, .sidebar-focus-title, .sidebar-newest-title {
+    // display: inline-block;
+  	font-size: 1.1rem;
+  	font-weight: 700;
+    color: $primary-color;
+    text-transform: uppercase;
+    
+    // border-top: 2px solid $secondary-color;
+    width: auto;
+    // text-decoration: underline;
+    // text-decoration-color: $secondary-color;
+  }
+  .sidebar-keywords {
+  	font-size: 0.9rem;
+    color: black;
+  }
+}
+
+.citation {
+  background: black;
+  height: 100%;
+  width: 75vw;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.citation-show {
+  position: absolute;
+  left: 100%;
+  animation-name: moveLeftAnima;
+  animation-duration: 0.5s;
+  // animation-direction: reverse;
+  background: black;
+  height: 100%;
+  img {
+    border-left: 1px solid $primary-color;
+    width: 100%;
+    height: 100%;
+  }
+}

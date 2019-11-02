@@ -1,0 +1,18 @@
+
+<div class="container">
+	<div class="row firm-and-proud-distance-from-header" *ngFor="let data of post">
+		<div class="col-sm-12 col-lg-8">
+			<h2 class="post-title" *ngIf="post" [innerHTML]="data.title.rendered"> </h2>
+			<div *ngIf="post" class="blog-post" [innerHTML]="data.content.rendered"> </div>
+		</div>
+		<div class="col-lg-4" style="padding-left: 2rem">
+			<img class="featured-image" src="{{data.featured_image_src}}" alt="{{data.title.rendered}}"/>
+			<span style='font-weight: 700'>Datum objavljivanja: </span><span> {{ data.date }}</span> 
+			<div><span  style='font-weight: 700'>Tagovi:</span>
+				<span *ngFor="let tag of data.tags_name">
+					#<a routerLink="/tags/{{tag.name}}/{{tag.term_id}}" [innerHTML]="tag.name" ></a> 
+				</span>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,29 @@
+@import "../../../styles.scss";
+
+.tags-container {
+	.tags-section {
+		border-bottom: 1px solid #eee;
+		margin-top: 5rem;
+		padding-bottom: 2rem;
+	}
+	.tags-section:first-child {
+		margin-top: 0;
+	}
+	.tags-section:last-child {
+		border-bottom: none;
+		margin-bottom: 5rem;
+	}
+	h1 {
+		text-transform: uppercase;
+		font-weight: 700;
+	}
+	h2 {
+		text-transform: uppercase;
+		color: $secondary-color;
+		font-weight: 700;
+	}
+	.tag-text {
+		padding-left: 2rem;
+	}
+
+}

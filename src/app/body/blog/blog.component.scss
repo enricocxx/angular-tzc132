@@ -1,0 +1,15 @@
+@import "../../../styles.scss";
+.blog-container {
+	margin-bottom: 2rem;
+	.blog-meta-data {
+		padding-left: 2rem;
+	}
+}
+
+@media only screen and ( max-width: 1024px ) {
+	.blog-container {
+		.blog-meta-data {
+			padding-left: 15px;
+		}
+	}	
+}

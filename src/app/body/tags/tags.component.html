@@ -1,0 +1,95 @@
+<div class="row one-screen firm-and-proud-distance-from-header tags-container">
+	<div class="col-lg-1"></div>
+	<div class="col-lg-11">
+		<div *ngIf="showBlog" class="tags-section">
+			<h1> Sekcija: Blog</h1>
+			<h2> Tag: {{ tagName }}</h2>
+			<div *ngIf="blogTags">
+				<div class="row tag-text" *ngFor="let tag of blogTags">
+					<div *ngIf="tag" class="col-sm-12 col-lg-8">
+						<h4 class="post-title">
+							<a routerLink="/{{tag.type}}/{{tag.slug}}" [innerHTML]="tag.title.rendered"></a>
+						</h4>
+						<div class="tag-text" *ngIf="tag" class="blog-post" [innerHTML]="tag.excerpt.rendered"> </div>
+					</div>
+				</div>
+				<app-pagination [post_type]="'blog/tagovi'" [result]="blogTags"></app-pagination>
+			</div>
+			
+			<div *ngIf="!blogTags">
+				<div class="col-sm-12 col-lg-8">
+					<h6 class="post-title alert alert-danger">
+						Nema rezultata pretrage za tag '{{tagName}}' u sekciji Blog.
+					</h6>
+				</div>
+			</div>
+		</div>
+		<!-- pagination -->
+		<div *ngIf="showBlog">
+				<app-pagination [post_type]="'b1t0v11bajt0v1/tagovi'" [result]="blogTags"></app-pagination>
+		</div>
+	</div>
+	
+	<div class="col-lg-1"></div>
+	<div class="col-lg-11">
+		<div *ngIf="showBB" class="tags-section">
+			<h1> Sekcija: Bitovi i bajtovi</h1>
+			<h2> Tag: {{ tagName }}</h2>
+			<div *ngIf="bbTags">
+				<div class="row tag-text" *ngFor="let tag of bbTags">
+					<div class="col-sm-12 col-lg-8">
+						<h4 class="post-title">
+							<a routerLink="/{{tag.type}}/{{tag.slug}}" [innerHTML]="tag.title.rendered"></a>
+						</h4>
+						<div *ngIf="tag" class="blog-post" [innerHTML]="tag.excerpt.rendered"> </div>
+					</div>
+				</div>
+				<app-pagination [post_type]="'b1t0v11bajt0v1/tagovi'" [result]="bbTags"></app-pagination>
+			</div>
+			<div *ngIf="!bbTags">
+				<div class="col-sm-12 col-lg-8">
+					<h6 class="post-title alert alert-danger">
+						Nema rezultata pretrage za tag '{{tagName}}' sekciji Bitovi i bajtovi.
+					</h6>
+				</div>
+			</div>
+		</div>
+		<!-- pagination -->
+		<div *ngIf="showBB">
+				<app-pagination [post_type]="'b1t0v11bajt0v1/tagovi'" [result]="bbTags"></app-pagination>
+		</div>
+	</div>
+	
+	<div class="col-lg-1"></div>
+	<div class="col-lg-11">
+		<div *ngIf="showPremotavanje" class="tags-section">
+			<h1> Sekcija: Premotavanje </h1>
+			<h2> Tag: {{ tagName }}</h2>
+			<div *ngIf="premotavanjeTags">
+				<div class="row tag-text" *ngFor="let tag of premotavanjeTags">
+					<div class="col-sm-12 col-lg-8">
+						<h4 class="post-title">
+							<a routerLink="/{{tag.type}}/{{tag.slug}}" [innerHTML]="tag.title.rendered"></a>
+						</h4>
+						<div *ngIf="tag" class="blog-post" [innerHTML]="tag.excerpt.rendered"> </div>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div *ngIf="!premotavanjeTags">
+				<div class="col-sm-12 col-lg-8">
+					<h6 class="post-title alert alert-danger">
+						Nema rezultata pretrage za tag '{{tagName}}' sekciji Premotavanje.
+					</h6>
+				</div>
+			</div>
+		</div>
+		<!-- pagination -->
+		<div *ngIf="premotavanjeTags">
+			<app-pagination [post_type]="'premotavanje/tagovi'" [result]="premotavanjeTags"></app-pagination>
+		</div>
+	</div>
+</div>
+
+ 

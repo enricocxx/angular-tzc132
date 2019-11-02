@@ -1,0 +1,144 @@
+<div class="frontpage-section">
+	<div class="container one-screen">
+		<div class="row">
+			<div class="col-sm-12 col-lg-8">
+				<div *ngFor="let post of entryPost">
+					<h2 class="post-title" [innerHTML]="post.title.rendered"></h2>
+					<p class="entry-excerpt" [innerHTML]="post.content.rendered.substr(0,885) + '...'"></p>
+					<span class="read-more"><a routerLink="/log" title="Read more about this web site">Read more</a> </span>
+				</div>
+			</div>
+			<div class="col-sm-12 col-lg-4 welcome-image">
+				<!-- <img src="assets/img/main-image-1.png"> -->
+				<img class="img-responsive" src="assets/img/psihologija.png">
+				<div class="kraina-poetry">
+					<p>Fitter, happier, more productive,</p>
+					<p>not drinking too much...</p>
+				</div>
+				
+			</div>
+		</div>
+	</div> 
+	<!-- <img class="selected-citation" src="assets/img/biafra.png" alt="counter-culture">
+	 -->
+	<div class="container">
+		<div class="bb-section">
+		
+			<div class="row">
+				<div class="col-sm-12 col-lg-12">
+					<h2 class="section text-right"><span> B1t0v1 1 bajt0v1 </span> </h2>
+					<div class="row">
+						<div class="col-lg-sm-12 col-lg-8">
+							<div *ngFor="let programming of bb; let i = index">
+						
+								<div *ngIf="i<2" class="bb-left-container ">
+									<div *ngIf="i==1" class="border-top"></div>
+									<i class="fas fa-star bb-star"></i>
+									<h5 class="title d-inline-block">
+										<a routerLink="/b1t0v11bajt0v1/{{programming.slug}}" [innerHTML]="programming.title.rendered"></a>
+									</h5>
+									<div class="tag-container">
+									  <span *ngFor="let tag of programming.tags_name" class="tag-bckg"><a routerLink="/tags/{{tag.name}}/{{tag.term_id}}" [innerHTML]="tag.name" ></a></span>	
+									</div>
+									
+									<p [innerHTML]="programming.excerpt.rendered"></p>
+									<p><span class="publishing-date-title">Objavljeno: </span> <span class="publishing-date">| {{programming.date | date:'medium'}} |</span> <span class="publishing-date-title"> u sekciji 'Bitovi i bajtovi' </span></p>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-sm-12 col-lg-4">
+							<div *ngFor="let programming of bb; let i = index" class="">
+								<div *ngIf="i===2" class="bb-right-container col-lg-sm-12 col-lg-12 ">
+									<i class="fas fa-star bb-star"></i>
+									<h5 class="title d-inline-block">
+										<a routerLink="/b1t0v11bajt0v1/{{programming.slug}}" [innerHTML]="programming.title.rendered"></a>
+									</h5>
+									<div class="tag-container">
+									  <span *ngFor="let tag of programming.tags_name" class="tag-bckg"><a routerLink="/tags/{{tag.name}}/{{tag.term_id}}" [innerHTML]="tag.name"></a></span>
+									</div>
+									<p [innerHTML]="programming.excerpt.rendered"></p>
+									<p><span class="publishing-date-title">Objavljeno: </span> <span class="publishing-date">| {{programming.date | date:'medium'}} |</span> <span class="publishing-date-title"> u sekciji 'Bitovi i bajtovi' </span></p>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+
+				</div>
+			</div>	
+		</div>
+
+		<div class="review-section">
+			<h2 class="section text-center"><span>Premotavanje</span></h2>
+		
+			<div class="row review-section " #musicSection>
+				<div class="col-lg-4 col-sm-12 row paddingReviewSmall">
+					<div class="col-sm-12 col-lg-6 front-music-image-div"  (mouseout)="onLeaveMusicImage()" *ngFor="let post of music">
+						<div class="bckg-black" (mouseover)="onHoverShowMusicData(post)">
+							<div class="review-block">
+								<h2>
+									<a *ngIf="post.kategorije" routerLink="/premotavanje/knjige/{{post.slug}}" class="post-name" [innerHTML]="post.title.rendered" title=""></a>
+									<a *ngIf="post.category_name === 'muzika'" routerLink="/premotavanje/muzika/{{post.slug}}" class="post-name" [innerHTML]="post.title.rendered" title=""></a>
+								</h2>
+								<img *ngIf="post.featured_image_src" src="{{post.featured_image_src}}" class="front-music-image">
+							</div>
+							<!-- <img *ngIf="post.featured_image_src" src="{{post.featured_image_src}}" class="front-music-image" [ngClass]="{'opacity-third': post.title == selectedMusicPost}" > -->
+							<!-- <p class="post-text" [ngClass]="{'d-none': post.title != selectedMusicPost}">{{(post.excerpt.rendered).substr(0,40)}}</p> -->
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-1"></div>
+				<div class="col-lg-7 border border-dark main-image">
+					
+					<img *ngIf="!reviewImage" src="https://1.bp.blogspot.com/-Trub44p8Pcs/WdpHG4_HsSI/AAAAAAABlIw/oLtLF-FhJkM1wvWeegdOOW0BJ7dA7_UmQCLcBGAs/s1600/alita-angel-cyberpunk.png" class="" alt="">
+					<img *ngIf="reviewImage" src={{reviewImage}} alt="" [ngClass]="'opacity-third'" class='wide-image' >
+					<h3><a class="review-title" *ngIf="reviewTitle" [innerHTML]="reviewTitle" href="" title=""></a></h3>
+					<p class="review-excerpt" *ngIf="reviewExcerpt" [innerHTML]="reviewExcerpt"></p>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="blog-section">
+			<h2 class="section text-left"><span>blog</span></h2>
+			<div class="row">
+				<div class="col-sm-12 col-lg-12 blog-columns">
+					<div class="row">
+						<div class="col-lg-sm-12 col-lg-4">
+							<div *ngFor="let blog of blogFront; let i = index">
+								<div *ngIf="i===2" class="blog-left-container">
+									<i class="fas fa-star blog-star"></i>
+									<h5 class="blog-title d-inline-block">
+										<a routerLink="/blog/post/{{blog.slug}}" class="post-name" [innerHTML]="blog.title.rendered" title=""></a>
+									</h5>
+									<div class="tag-container">
+										  <span *ngFor="let tag of blog.tags_name" class="tag-bckg"><a routerLink="/tags/{{tag.name}}/{{tag.term_id}}" [innerHTML]="tag.name" ></a></span>	
+									</div>
+									<p [innerHTML]="blog.excerpt.rendered"></p>
+									<p><span class="publishing-date-title">Objavljeno: </span> <span class="publishing-date">| {{blog.date  | date:'medium'}} |</span> <span class="publishing-date-title"> u sekciji 'Blog' </span></p>
+									<img src="{{blog.featured_image_src}}" class="img-fluid img-thumbnail"/>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-sm-12 col-lg-8">
+							<div *ngFor="let blog of blogFront; let i = index">
+								<div *ngIf="i<2"class="blog-right-container">
+									<i class="fas fa-star blog-star"></i>
+									<h5 class="blog-title d-inline-block">
+										<a routerLink="/blog/post/{{blog.slug}}" class="post-name" [innerHTML]="blog.title.rendered" title=""></a>
+									</h5>
+									<div class="tag-container">
+									  <span *ngFor="let tag of blog.tags_name" class="tag-bckg"><a routerLink="/tags/{{tag.name}}/{{tag.term_id}}" [innerHTML]="tag.name" ></a></span>	
+									</div>
+									<p [innerHTML]="blog.excerpt.rendered"></p>
+									<p><span class="publishing-date-title">Objavljeno: </span> <span class="publishing-date">| {{blog.date  | date:'medium'}} |</span> <span class="publishing-date-title"> u sekciji 'Blog' </span></p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>	
+		</div>
+	</div>
+</div>

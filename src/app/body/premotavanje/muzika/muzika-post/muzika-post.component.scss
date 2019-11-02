@@ -1,0 +1,11 @@
+@import "../../../../../styles.scss";
+
+.muzika-post-meta {
+	padding-left: 2rem;
+}
+
+@media only screen and ( max-width: 1024px ) {
+	.muzika-post-meta {
+		display: none;
+	}
+}

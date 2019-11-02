@@ -1,0 +1,28 @@
+
+	<div class="sidebar-container sticky-top firm-and-proud-distance-from-header">
+		<div class="move-sidebar-left">
+			<i class="fa fa-arrow-left" aria-hidden="true" (click)="showCitation()" [style.display]="displayArrowLeft"></i>
+			<i class="fas fa-times" aria-hidden="true" (click)="closeCitation(element)" [style.display]="displayArrowRight" #element></i>
+		</div>
+		<h4 class="sidebar-section-description">Sekcija '{{sectionTitle}}': </h4>
+		<p class="sidebar-keywords" [innerHTML]="sectionText"></p>
+
+		<h4 class="sidebar-links-title"> Linkovi: </h4>
+		<ul>
+			<li>
+				<a href="https://www.fsf.org/">Freedom Software Foundation</a>
+			</li>
+			<li>
+				<a href="http://www.phrack.org/">Phrack Magazine</a>
+			</li>
+			<li>
+				<a href="https://p2pfoundation.net/">P2P Foundation</a>
+			</li>
+		</ul>
+		<h4 class="sidebar-focus-title">U fokusu: (u pripremi)</h4>	
+
+		<h4 class="sidebar-newest-title">Najnovije: (u pripremi) </h4>
+	</div>
+	<div [class]="citationShow" [style.display]="displayCitation" [style.width.px]="imageWidth">
+		<img src="{{citationImage}}" alt="" class="">
+	</div>

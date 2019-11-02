@@ -1,0 +1,24 @@
+@keyframes moveLeftAnimaInBody {
+  from {left: 140%;}
+  to {left: 0%;}
+}
+
+@keyframes moveRightAnimaInBody {
+  from {left: 140%;}
+  to {left: 0%;}
+}
+
+.test-height {
+  max-height: 100%;
+}
+.show-citation {
+	left: 0%;
+    animation-name: moveLeftAnimaInBody;
+    animation-duration: 1s;
+}
+
+.hide-citation {
+	// left: 140%;
+    animation-name: moveRightAnimaInBody;
+    animation-duration: 0.3s;
+}

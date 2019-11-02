@@ -1,0 +1,65 @@
+
+	<div class="row firm-and-proud-distance-from-header">
+		<div class="col-lg-1"></div>
+		<div class="col-lg-11">
+			<h4 class="search-area"> Oblast: <span class="search-area-span">Blog</span></h4>
+			<h5> Pretraga za pojam: <span class="search-item"> {{ searchItem }} </span></h5>
+			<div *ngIf="blogSearchResult">
+				<div class="row border-bottom" *ngFor="let item of blogSearchResult">
+					<div class="col-sm-12 col-lg-8">
+						<h4 class="post-title" *ngIf="item">
+							<a routerLink="/{{item.type}}/{{item.slug}}" [innerHTML]="item.title.rendered"></a>
+						</h4>
+						<div *ngIf="item" class="blog-post" [innerHTML]="item.excerpt.rendered"> </div>
+					</div>
+				</div>
+				<div class="no-search-results">
+					<div class="border-bottom" *ngIf="blogSearchResult.length === 0">
+						Nema rezultata pretraga za ovaj pojam
+					</div> 
+				</div>
+				
+			
+				<app-pagination [post_type]="'blog/pretraga'" [searchItem]="searchItem" [result]="blogSearchResult"></app-pagination>
+			</div>
+				
+			<h4 class="search-area"> Oblast: Premotavanje</h4>
+			<h5> Pretraga za pojam: <span class="search-item"> {{ searchItem }}</span></h5>
+			<div *ngIf="premotavanjeSearchResult">
+				<div class="row border-bottom" *ngFor="let item of premotavanjeSearchResult">
+					<div class="col-sm-12 col-lg-8">
+						<h4 class="post-title" *ngIf="item">
+							<a routerLink="/{{item.type}}/{{item.slug}}" [innerHTML]="item.title.rendered"></a>
+						</h4>
+						<div *ngIf="item" class="blog-post" [innerHTML]="item.excerpt.rendered"> </div>
+					</div>
+				</div>
+				<div class="no-search-results">
+					<div class="border-bottom" *ngIf="premotavanjeSearchResult.length === 0">
+						Nema rezultata pretraga za ovaj pojam
+					</div> 
+				</div>
+			</div>
+
+			<h4 class="search-area"> Oblast: Bitovi i bajtovi</h4>
+			<h5> Pretraga za pojam: <span class="search-item">  {{ searchItem }}</span></h5>
+			<div *ngIf="bbSearchResult">
+				<div class="row border-bottom" *ngFor="let item of bbSearchResult">
+					<div class="col-sm-12 col-lg-8">
+						<h4 class="post-title" *ngIf="item">
+							<a routerLink="/{{item.type}}/{{item.slug}}" [innerHTML]="item.title.rendered"></a>
+						</h4>
+						<div *ngIf="item" class="blog-post" [innerHTML]="item.excerpt.rendered"> </div>
+					</div>
+				</div>
+				<div class="no-search-results">
+					<div class="border-bottom" *ngIf="bbSearchResult.length === 0">
+						Nema rezultata pretraga za ovaj pojam
+					</div> 
+				</div>
+			</div>
+			
+		</div>
+		
+		
+	</div>

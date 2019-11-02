@@ -1,0 +1,32 @@
+<div class="row firm-and-proud-distance-from-header">
+	<div class="col-lg-1"></div>
+	<div class="col-lg-11">
+		<h2 class="section-title">Muzika</h2>
+		<div class="row">
+			<div class="col-lg-3 music-item" *ngFor="let data of httpResponse">
+				<img class="music-image-front" src="{{data.featured_image_src}}" alt="{{data.title.rendered}}"/>
+				
+				<div class="text-center">
+					
+					<h2 class="music-title text-center" *ngIf="httpResponse">
+						<a routerLink="/premotavanje/muzika/{{data.slug}}" [innerHTML]="data.title.rendered"></a>
+					</h2>
+					<!-- <div *ngIf="post" class="blog-post" [innerHTML]="data.excerpt.rendered"> </div> -->
+					<span class="tag-under-image" *ngFor="let tag of data.tags_name">
+						#<a routerLink="/tags/{{tag.name}}/{{tag.term_id}}" [innerHTML]="tag.name" ></a>
+					</span>
+				</div>
+				<div class="text-center">
+					<span class="date-label-under-image">Datum objavljivanja: </span><span class="date-under-image"> {{ data.date }}</span>  
+				</div>
+			</div>
+		</div>
+		<div *ngIf="httpResponse">
+			<app-pagination [post_type]="post_type" [result]="httpResponse"></app-pagination>	
+		</div>
+	</div>
+	
+</div>	<!-- .row -->
+
+
+		
