@@ -1,0 +1,272 @@
+/* You can add global styles to this file, and also import other style files */
+$primary-color: #502259;
+$secondary-color: #468036;
+$third-color: #365680;
+$primary-title-color: #803646;
+$primary-border-color: #e7dcdc;
+$white: white;
+
+$border-color-opacity: rgba(80,34,89, 0.4);
+$border-color-strong: rgba(80,34,89, 1);
+$font-family-base: 'Rajdhani', sans-serif !important; // add this line first before importing bootstrap
+
+@import "~bootstrap/scss/bootstrap";
+
+
+@mixin one-screen() {
+	height: 80vh;
+}
+
+@mixin section-title-size( $size ) {
+	font-size: $size;
+	text-transform: uppercase;
+}
+@mixin star($size, $color ) {
+    color: $color;
+	font-size: $size;
+	margin-right: 0.5rem;
+}
+@mixin link() {
+	color: $primary-color;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+@mixin linkHover(){
+	text-decoration: none;
+	color: $secondary-color;
+	font-weight: 700;
+}
+
+body {
+// background-color: #f4f4f4 !important; 
+	p {
+		font-size: 18px;
+	}
+}
+/* for frontpage */
+body .entry-excerpt p {
+	font-size: 20px;
+	display: inline;
+}
+
+a, h1, h2 {
+	color: $primary-color;
+}
+/*
+*  POSTS AND TITLES
+*/
+.section-title {
+	text-transform: uppercase;
+	font-weight: 700;
+	margin-bottom: 2rem;
+}
+.blog-post {
+	p {
+		img {
+			float:left;
+	        padding-right: 1rem;
+		  }	
+	}
+}
+.post-title{
+	font-weight: 900;
+	margin-top: 1rem;
+	a {
+		color: $primary-color;	
+	}
+	a:hover {
+		color: $secondary-color;
+		text-decoration: none;
+	}	
+}
+
+.featured-image {
+	width: 100%;
+	margin-top: 1rem;
+}
+.post-meta-distance {
+	margin: 1rem 0 2rem;
+}
+.date-label-under-image, .tag-label-under-image {
+	font-weight: 700;
+}
+.tag-under-image {
+	font-weight: 700;
+	color: $secondary-color;
+	a {
+		color: $secondary-color;	
+	}
+	
+}
+.tag-in-card {
+	color: white;
+}
+.section {
+	@include section-title-size(1.8rem);
+	color: $primary-color;
+	font-weight: 700;
+	padding-left: 15px;
+	padding-right:15px;
+	width: 100%; 
+    border-bottom: 2px solid $primary-color; 
+    line-height: 0.1em;
+    margin: 3rem 0 5rem; 
+    span { 
+	    background:#fff; 
+	    padding:0 10px;
+
+	}
+}
+
+.title {
+	color: $primary-color;
+	font-weight: 700;
+}
+
+// .border-left {
+// 	border-left: 1px solid $border-color-opacity;
+// }
+// .border-right {
+// 	border-right: 1px solid $border-color-opacity;
+// }
+// .border-right-strong {
+// 	border-right: 2px solid $border-color-strong;
+// }
+.border-main-top {
+	border-top: 3px solid $secondary-color;
+	position: fixed;
+	width: 100%;
+	z-index: 1;
+}
+.border-main-bottom {
+	border-bottom: 3px solid $secondary-color;
+	position: absolute;
+	height:inherit;
+	width: 100%;
+	z-index: 1;
+}
+.border-top {
+	border-bottom: 1px solid $border-color-opacity;
+	margin-bottom: 1rem;
+}
+.border-bottom {
+	border-bottom: 1px solid $primary-color;
+}
+.publishing-date-title {
+	text-decoration: underline;
+	text-decoration-color: $primary-color;
+	margin-right: 0.7rem;
+}
+
+/*
+*  Small things, spans and similar
+*/
+.publishing-date {
+	// color: $primary-color;
+	font-weight: 700;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+
+
+
+/*
+* Distances and borders
+*/
+.firm-and-proud-distance-from-header {
+	padding-top: 5rem;
+}
+.post-meta-border {
+	border-top: 1px solid $border-color-opacity;
+	padding-bottom: 2rem;
+	width: 30%;
+}
+.post-meta-distance {
+	div {
+		padding-bottom: 1rem;
+	}
+}
+
+
+.sidebar-background {
+	position:relative;
+	// background: $primary-color;
+	// background: white;
+	border-left: 1px solid $border-color-opacity;
+	color: $secondary-color;
+	min-height: 100vh;
+	z-index:0;
+	-webkit-box-shadow: 6px -10px 10px 1px $primary-color;
+	-moz-box-shadow: 6px -10px 10px 1px $primary-color;
+	box-shadow: 6px -10px 10px 1px $primary-color;
+}
+.sidebar-container {
+    // position:fixed;
+    top: 6rem;
+    height: 100%;
+    .post-sidebar-title {
+    	font-size: 1.2rem;
+    	font-weight: 700;
+    }
+}
+.kljucne-reci {
+	// color: white;
+	color: $primary-color;
+}
+/* background shape for tags */
+.tag-container {
+	// margin: 0 0 1rem;
+  .tag-bckg {
+		position: relative;
+		border-radius: 3px;
+		background: $primary-color;
+		opacity: 0.7;
+		padding: 4px 20px 4px 25px;
+		margin-bottom: 1rem;
+		margin-right: 1rem;
+		// white-space:nowrap;
+		display:inline-block;
+		a {
+			color: white;
+			font-size:12px;
+
+		}
+		a:visited {
+			color: white;
+		}
+		a:hover {
+			text-decoration: none;
+		}
+	}
+	.tag-bckg::before {
+		position:absolute;
+		top: 11px;
+		left: 10px;
+		background: white;
+		border-radius: 10px;
+		content: "";
+		box-shadow: inset 0 1px rgba(0,0,0,.25);
+		height: 6px;
+		width: 6px;
+	}
+	.tag-bckg::after {
+		background: white;
+		border-bottom: 16px solid transparent;
+		border-left: 13px solid $primary-color;
+		border-top: 16px solid transparent;
+		content: "";
+		position:absolute;
+		right: 0;
+		top: 0;
+	}
+	.tag-bckg:hover {
+		opacity: 1;
+	}
+}
+/* end of background */
+
+@media only screen and (max-width: 1024px ) {
+	.sidebar-background {
+		display:none !important;
+	}
+}
